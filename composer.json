@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mysql/mysql": "1.0.*"
+    }
+}
