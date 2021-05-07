@@ -7,4 +7,4 @@
 
 ## Para clonar o repositório
 
-'git clone https://github.com/aliciarita/monitoria_apc.git'
+`git clone https://github.com/aliciarita/monitoria_apc.git`
