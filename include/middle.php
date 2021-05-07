@@ -2,7 +2,7 @@
     <section>
         <div class="jumbotron bg-dark container mt-2">
             <h1 class="font-size small">    Este espaço é destinado a monitoria de apc, aqui você 
-            poderá verificar a disponibilidade de horários dos monitores e tutores, agendar seu horário na monitoria 
+            poderá verificar a disponibilidade de horários dos monitores e tutores, agendar seu horário na tutoria 
             </h1>
         </div>
     </section>
