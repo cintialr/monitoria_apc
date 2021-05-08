@@ -1,5 +1,11 @@
 # monitoria_apc
 
+##CRUD
+  A criação do CRUD foi feita PHP, utilizando o XAMPP e composer 
+
+##Banco de dados
+  MySql
+
 ## Autores
 
 - Alícia Rita Oliveira dos Reis - `17/0129306`
