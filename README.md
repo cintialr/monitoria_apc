@@ -1,9 +1,11 @@
 # monitoria_apc
 
-##CRUD
+## CRUD
+
   A criação do CRUD foi feita PHP, utilizando o XAMPP e composer 
 
-##Banco de dados
+## Banco de dados
+
   MySql
 
 ## Autores
