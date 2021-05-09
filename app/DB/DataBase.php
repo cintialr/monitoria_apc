@@ -1,32 +1,44 @@
 <?php
-    
-namespace app\DB;
+
+namespace App\DB;
 
 use \PDO;
 use PDOException;
 
 class DataBase{
 
-    /* Host de conexão com o banco de dados */
-    const HOST  = 'db';
+    /**
+     * Host de conexão com o banco de dados
+     * @var string
+     */
+    const HOST  = 'localhost';
 
-    /* Nome do banco de dados */
-    const NAME = 'Monitoria_apc';
+    /**
+     * Nome do banco de dados
+     * @var string
+     */
+    const NAME = 'monitoria_apc';
 
-    /* Usuário para acesso do banco */
+    /**
+     * Usuário para acesso do banco
+     * @var string
+     */
     const USER = 'root';
 
-    /* Senha para acesso do banco */
-    const PASS = 'monitoria';
-    
     /**
-      * Tabela a ser manipulada
+     * Senha para acesso do banco
+     * @var string
+     */
+    const PASS = '';
+
+    /**
+      * Nome da tabela a ser manipulada
       * @var string
-    */
+      */
     private $table;
 
     /**
-     * Intancia de conexão 
+     * Intancia de conexão
      * @var PDO
      */
     private $connection;
@@ -41,9 +53,7 @@ class DataBase{
         $this->setConnection();
     }
 
-     /**
-      * Método responsável por criar uma conexão com o bd
-      */
+    /* Método responsável por criar uma conexão com o bd */
     public function setConnection(){
         try{
             $this->connection = new PDO('mysql:host=' .self::HOST. ';dbname=' .self::NAME, self::USER, self::PASS);
@@ -51,8 +61,63 @@ class DataBase{
         }catch(PDOException $e){
             die('ERROR: '.$e->getMessage());
         }
-    }        
-   
+    }
+
+    
+    /**
+     * Método responsável por executar queries dentro do banco de dados
+     * @param  string $query
+     * @param  array  $params
+     * @return PDOStatement
+     */
+    public function execute($query,$params = []){
+        try{
+            $statement = $this->connection->prepare($query);
+            $statement->execute($params);
+            return $statement;
+        }catch(PDOException $e){
+            die('ERROR: '.$e->getMessage());
+        }
+    }
+
+    /**
+     * Método responsável por inserir dados no banco
+     * @param array $values [ field => value]
+     * @return integer ID inserido
+     */
+    public function insert($values){
+        //dado presente na query
+        $fields = array_keys($values);
+        $binds  = array_pad([],count($fields),'?');
+
+        //MONTA A QUERY
+        $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields).') VALUES ('.implode(',',$binds).')';
+
+        $this->execute($query, array_values($values));
+        //EXECUTA A QUERY
+        return $this->connection->lastInsertId();
+    }
+
+     /**
+     * Método responsável por executar uma consulta no BD
+     * @param  string $where
+     * @param  string $order
+     * @param  string $limit
+     * @param  string $fields
+     * @return PDOStatement
+     */
+     public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        //DADOS DA QUERY
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        //MONTA A QUERY
+        $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+ 
+        //EXECUTA A QUERY
+        return $this->execute($query);
+    }
 }
 
 ?>
