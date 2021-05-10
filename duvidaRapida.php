@@ -6,6 +6,7 @@
 
      /* Verifica se os campos obrigatórios estão preenchidos. O campo de envio de
      arquivo é opcional */
+    
     if(isset($_POST['assunto'], $_POST['matricula'], $_POST['descricao'])){
 
         $obDuvida = new Duvida;

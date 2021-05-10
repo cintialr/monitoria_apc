@@ -17,21 +17,32 @@
             </div>
 
             <div class="form-group mt-2">
-                <label>Email</label>
-                <input type="test" class="form-control" name="email">
-            </div>
-
-            <div class="form-group mt-2">
                 <label>Senha</label>
-                <input type="test" class="form-control" name="senha">
+                <input type="password" class="form-control" id="inputPassword">
             </div>
 
-            <div class="form-group">
-                <button class="btn btn-secondary mt-4" type="submit">Enviar</button>
+            <div class="mt-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Monitor" checked>
+                        <label class="form-check-label" for="exampleRadios1">Monitor</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Tutor" checked>
+                    <label class="form-check-label" for="exampleRadios2">Tutor</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="Professor" checked>
+                    <label class="form-check-label" for="exampleRadios3">Professor</label>
+                </div>
+            </div>
+
+            <div class="btn container form-group">
+                <button class="btn btn-secondary mt-3" type="submit">Enviar</button>                
             </div>
         </form>
-        </section>
+        <div class="btn container form-group">
             <a href="index.php">
-                <button class="btn btn-secondart mt-3">Voltar</button>
+                <button class="btn btn-secondary mt-2">Voltar</button>
             </a>
+        </div>
 </main>

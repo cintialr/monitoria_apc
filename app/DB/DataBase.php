@@ -70,7 +70,7 @@ class DataBase{
      * @param  array  $params
      * @return PDOStatement
      */
-    public function execute($query,$params = []){
+     public function execute($query,$params = []){
         try{
             $statement = $this->connection->prepare($query);
             $statement->execute($params);
@@ -85,7 +85,7 @@ class DataBase{
      * @param array $values [ field => value]
      * @return integer ID inserido
      */
-    public function insert($values){
+     public function insert($values){
         //dado presente na query
         $fields = array_keys($values);
         $binds  = array_pad([],count($fields),'?');
@@ -117,6 +117,22 @@ class DataBase{
  
         //EXECUTA A QUERY
         return $this->execute($query);
+    }
+   
+    /**
+     * Método responsável por excluir dados do banco
+     * @param  string $where
+     * @return boolean
+     */
+        public function delete($where){
+        //MONTA A QUERY
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+        //EXECUTA A QUERY
+        $this->execute($query);
+
+        //RETORNA SUCESSO
+        return true;
     }
 }
 

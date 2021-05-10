@@ -5,7 +5,7 @@
             </h3>
 
             <a href="inicio.php" class="container">
-                <button class="btn btn-info text-light">Aluno</button>
+                <button class="btn btn-primary text-light">Aluno</button>
             </a>
     </div>
     <div class="jumbotron bg-secondary container mt-5">
@@ -13,10 +13,10 @@
             <h6 class="container">Acesso para monitores e tutores</h6>
 
             <a href="login.php" class="container">
-                <button class="btn btn-info text-light">Login</button>
+                <button class="btn btn-primary text-light">Login</button>
             </a>
             <a href="cadastro.php" class="container">
-                <button class="btn btn-info text-light">Cadastro</button>
+                <button class="btn btn-primary text-light">Cadastro</button>
             </a>
     </div>
     <div class="jumbotron bg-secondary container mt-5">
@@ -24,10 +24,10 @@
             <h6 class="container">Acesso exclusivo para professores</h6>
 
             <a href="login.php" class="container">
-                <button class="btn btn-info text-light">Login</button>
+                <button class="btn btn-primary text-light">Login</button>
             </a>
             <a href="cadastro.php" class="container">
-                <button class="btn btn-info text-light">Cadastro</button>
+                <button class="btn btn-primary text-light">Cadastro</button>
             </a>
     </div>
 </main>

@@ -1,5 +1,5 @@
 <main>
-    <h1 class="mt-3">Dúvida rápida</h1>
+    <h3 class="mt-3">Dúvida rápida</h3>
         <form method="post">
             <div class="form-group">
                 <label>Assunto</label>
@@ -16,19 +16,16 @@
                 <textarea class="form-control" name="descricao" rows="8"></textarea>
             </div>
 
-            <div class="form-group mt-3">
+            <div class="container form-group mt-3">
                 <input type="file" name="arquivo"/>
             </div>
 
-            <div class="form-group">
+            <div class="btn container form-group">
                 <button class="btn btn-secondary mt-4" type="submit">Enviar</button>
-            </div>
-  
-        </form>
-
-        <section>
-            <a href="inicio.php">
-                    <button class="btn btn-secondary mt-4">Voltar</button>
+                <a href="inicio.php">
+                    <button class="btn btn-secondary mt-4 ms-5">Voltar</button>
                 </a>
-        </section>
+            </div>
+
+        </form>
 </main>

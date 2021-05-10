@@ -31,12 +31,18 @@
    public $arquivo;
 
    /**
+   * Data de publicação da vaga
+   * @var string
+   */
+   public $dataDuvida;
+
+   /**
     * Métofo que envia a duvida para o bd
     * @var boolean
     */
    public function enviarDuvida(){
      /* insere a data */ 
-     date('Y-m-d H:i:s');
+     $this->dataDuvida = date('Y-m-d H:i:s');
 
      $obDataBase = new DataBase('Duvida');
      /* insert() vai montar um sql de insert nas tabelas */
@@ -62,15 +68,23 @@
                                     ->fetchAll(PDO::FETCH_CLASS,self::class); /* define o tipo de array que será retornado, o tipo de objeto sera a classe de duvida */
    }
 
+
    /**
-   * Método responsável por buscar uma vaga com base em seu ID
-   * @param  integer $turma
+   * Método responsável por buscar uma dúvida com base em seu ID
+   * @param  integer $id
    * @return Vaga
    */
-   public static function getVaga($turma){
-    return (new Database('turma'))->select('turma = '.$turma)
+   public static function getVaga($id){
+    return (new Database('duvida'))->select('id = '.$id)
                                   ->fetchObject(self::class);
   }
 
+   /**
+   * Método responsável por excluir a vaga do banco
+   * @return boolean
+   */
+   public function excluir(){
+    return (new Database('vagas'))->delete('id = '.$this->id);
+  }
 
 }

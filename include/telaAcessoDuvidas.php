@@ -10,10 +10,10 @@
                         <td>'.$duvida->arquivo.'</td>
                         <td>'.date('d/m/Y à\s H:i:s',strtotime($duvida->dataDuvida)).'</td>
                         <td>
-                            <a href="responderDuvida.php">
-                                <button type="button" class="btn btn-primary">Responder</button>
+                            <a href="editar.php?id='.$duvida->id.'">
+                            <button type="button" class="btn btn-primary">Responder</button>
                             </a>
-                            <a href="excluir.php">
+                            <a href="excluirDuvida.php?id='.$duvida->id.'">
                                 <button type="button" class="btn btn-danger">Excluir</button>
                             </a>
                         </td>
