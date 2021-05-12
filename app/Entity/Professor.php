@@ -24,11 +24,17 @@ class Professor{
      */
     public $turma;
 
+    /**
+     * Senha de acesso
+     * @var string
+     */
+    public $senha;
+
     public function cadastrarProfessor(){
         $obDataBase = new DataBase('professor');
         $obDataBase->nome = $_POST['nome'];
         $obDataBase->matricula = $_POST['matricula'];
         $obDataBase->turma = $_POST['turma'];
-        
+        $obDataBase->senha = $_POST['senha'];
     }
 }

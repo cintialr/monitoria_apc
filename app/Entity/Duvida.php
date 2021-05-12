@@ -37,7 +37,7 @@
    public $dataDuvida;
 
    /**
-    * Métofo que envia a duvida para o bd
+    * Método que envia a duvida para o bd
     * @var boolean
     */
    public function enviarDuvida(){
@@ -63,28 +63,27 @@
     * @param string $limit
     * @return array
     */
-   public static function getDuvida($where = null, $order = null, $limit = null){
+   public static function getDuvidas($where = null, $order = null, $limit = null){
      return (new DataBase('duvida'))->select($where, $order, $limit)
                                     ->fetchAll(PDO::FETCH_CLASS,self::class); /* define o tipo de array que será retornado, o tipo de objeto sera a classe de duvida */
    }
 
-
-   /**
-   * Método responsável por buscar uma dúvida com base em seu ID
+     /**
+   * Método responsável por buscar uma duvida com base em seu ID
    * @param  integer $id
-   * @return Vaga
+   * @return Duvida
    */
-   public static function getVaga($id){
+  public static function getDuvida($id){
     return (new Database('duvida'))->select('id = '.$id)
                                   ->fetchObject(self::class);
   }
 
    /**
-   * Método responsável por excluir a vaga do banco
+   * Método responsável por excluir a duvida do banco
    * @return boolean
    */
    public function excluir(){
-    return (new Database('vagas'))->delete('id = '.$this->id);
+    return (new Database('duvida'))->delete('id = '.$this->id);
   }
 
 }

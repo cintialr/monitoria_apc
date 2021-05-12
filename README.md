@@ -7,7 +7,7 @@
 
 ## CRUD
 
-  O CRUD foi desenvolvido em PHP, utilizando o XAMPP e composer 
+  A criação do CRUD foi feita PHP, utilizando o XAMPP e composer 
 
 ## Banco de dados
 

@@ -6,7 +6,7 @@
 
     //VALIDAÇÃO DO ID
     if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
-        header('location: index.php?status=error2');
+        header('location: acessoDuvidas.php?status=error2');
         exit;
     }
 
@@ -15,20 +15,19 @@
 
     //VALIDAÇÃO DA VAGA
     if(!$obDuvida instanceof Duvida){
-        header('location: index.php?status=error1');
+        header('location: acessoDuvidas.php?status=error1');
+        exit;
     }
 
-    print_r($obDuvida);
-    
     //VALIDAÇÃO DO POST
     if(isset($_POST['excluir'])){
 
-        //$obDuvida->excluir();
+        $obDuvida->excluir();
 
         header('location: acessoDuvidas.php?status=success');
         exit;
     }
 
-    include __DIR__.'/includes/header.php';
-    include __DIR__.'/includes/telaExcluirDuvida.php';
-    include __DIR__.'/includes/footer.php';
+    include __DIR__.'/include/header.php';
+    include __DIR__.'/include/telaExcluirDuvida.php';
+    include __DIR__.'/include/footer.php';

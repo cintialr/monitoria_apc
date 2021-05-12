@@ -8,13 +8,17 @@
      arquivo é opcional */
     
     if(isset($_POST['assunto'], $_POST['matricula'], $_POST['descricao'])){
-
         $obDuvida = new Duvida;
         $obDuvida->assunto = $_POST['assunto'];
         $obDuvida->matricula = $_POST['matricula'];
         $obDuvida->descricao = $_POST['descricao'];
-        $obDuvida->arquivo = $_POST['arquivo'];
         $obDuvida->enviarDuvida();
+        
+
+        if(isset($_FILES['arquivo'])){
+            $obDuvida = new Duvida($_FILES['arquivo']);
+            $obDuvida->arquivo = $_FILES['arquivo'];
+        }
         
         header('location: index.php?status=success');
         exit;

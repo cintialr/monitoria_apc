@@ -1,18 +1,16 @@
-
-
 <main>
 
-<h2 class="mt-3">Excluir Dúvida</h2>
+<h2 class="mt-3">Remover Aluno</h2>
 
 <form method="post">
 
   <div class="form-group">
-    <p>Você deseja realmente excluir a dúvida <strong><?=$obDuvida->assunto?></strong>?</p>
+    <p>Você deseja realmente remover <strong><?=$obAluno->nome?></strong> da turma?</p>
   </div>
 
   <div class="form-group">
     <button type="submit" name="excluir" class="btn btn-danger">Excluir</button>
-    <a href="acessoDuvidas.php">
+    <a href="listagemAlunos.php">
       <button type="button" class="btn btn-secondary">Cancelar</button>
     </a>
   </div>

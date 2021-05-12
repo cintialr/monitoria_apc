@@ -53,7 +53,7 @@ class DataBase{
         $this->setConnection();
     }
 
-    /* Método responsável por criar uma conexão com o bd */
+    /* Método responsável por criar uma conexão com o BD */
     public function setConnection(){
         try{
             $this->connection = new PDO('mysql:host=' .self::HOST. ';dbname=' .self::NAME, self::USER, self::PASS);
@@ -119,6 +119,30 @@ class DataBase{
         return $this->execute($query);
     }
    
+        
+    /**
+     * Método responsável por executar atualizações no banco de dados
+     * @param  string $where
+     * @param  array $values [ field => value ]
+     * @return boolean
+     */
+    public function update($where,$values){
+        //DADOS DA QUERY
+        $fields = array_keys($values);
+
+        //MONTA A QUERY
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=? WHERE '.$where;
+
+        // função implode = Retorna uma string contendo os elementos da matriz na mesma ordem com uma ligação entre cada elemento.
+
+        //EXECUTAR A QUERY
+        $this->execute($query,array_values($values));
+
+        //RETORNA SUCESSO
+        return true;
+    }
+    
+    
     /**
      * Método responsável por excluir dados do banco
      * @param  string $where

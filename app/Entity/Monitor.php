@@ -23,12 +23,18 @@ class Monitor{
      * @var string
      */
     public $turma;
+    
+    /**
+     * Senha de acesso
+     * @var string
+     */
+    public $senha;
 
     public function cadastrarMonitor(){
         $obDataBase = new DataBase('monitor');
-        $obDataBase->nome = $_POST['nome'];
         $obDataBase->matricula = $_POST['matricula'];
+        $obDataBase->nome = $_POST['nome'];
         $obDataBase->turma = $_POST['turma'];
-        
+        $obDataBase->senha = $_POST['senha']; 
     }
 }

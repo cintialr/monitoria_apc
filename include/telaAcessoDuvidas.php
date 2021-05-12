@@ -1,4 +1,17 @@
 <?php
+    $mensagem = '';
+    if(isset($_GET['status'])){
+      switch ($_GET['status']) {
+        case 'success':
+          $mensagem = '<div class="alert alert-success">Ação executada com sucesso!</div>';
+          break;
+  
+        case 'error':
+          $mensagem = '<div class="alert alert-danger">Ação não executada!</div>';
+          break;
+      }
+    }
+  
     $resultados = '';
     foreach($duvidas as $duvida){ /* cada posição de duvidas vai ser transformado em uma duvida*/
         /* concatenando os resultados */
@@ -22,6 +35,7 @@
   
 ?>
 <main>
+    <?=$mensagem?>
     <h4 class="mt-3">Acesso as dúvidas dos alunos</h4>
 
     <section>
@@ -30,7 +44,7 @@
             <thead class="thead-dark justify-content-center">
 
                 <tr class="justify-content-center">
-                    <th scope="col">Número</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Matrícula</th>
                     <th scope="col">Assunto</th>
                     <th scope="col">Descrição</th>

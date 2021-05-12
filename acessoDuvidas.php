@@ -3,7 +3,7 @@
 
     use \App\Entity\Duvida;
 
-    $duvidas = Duvida::getDuvida();
+    $duvidas = Duvida::getDuvidas();
 
     include __DIR__.'/include/header.php';
     include __DIR__.'/include/telaAcessoDuvidas.php';

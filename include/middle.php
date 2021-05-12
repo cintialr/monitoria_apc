@@ -4,7 +4,7 @@
         </h5>
     </div>
 
-    <div class="jumbotron bg-secondary container mt-5">
+    <div class="jumbotron bg-secondary container mt-3">
         <p class="mt-2">Você pode enviar uma mensagem ou arquivos para algum dos monitores ou tutores no nosso canal dúvida rápida.</p>
         <a href="duvidaRapida.php">
             <button class="btn btn-primary">Dúvida rápida</button>
