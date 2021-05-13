@@ -59,4 +59,9 @@
             </tbody>
         </table>
     </section>
+    <div class="btn container ">
+            <a href="criarTurma.php">
+                <button class="btn btn-secondary">Voltar</button>
+            </a>
+    </div>
 </main>

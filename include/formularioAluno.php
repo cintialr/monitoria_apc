@@ -15,6 +15,11 @@
     </div>
     
     <div class="form-group mt-2">
+      <label>Turma</label>
+      <input type="text" class="form-control" name="turma" value="<?=$obAluno->turma?>">
+    </div>
+
+    <div class="form-group mt-2">
       <label>Natureza da disciplina</label>
       <input type="text" class="form-control" name="tipoDisciplina" value="<?=$obAluno->tipoDisciplina?>">
     </div>

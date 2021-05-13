@@ -24,8 +24,8 @@ if(!$obAluno instanceof Aluno){
 
 //VALIDAÇÃO DO POST
 if(isset($_POST['nome'],$_POST['matricula'],$_POST['tipoDisciplina'])){
-        $obAluno->nome = $_POST['nome'];
         $obAluno->matricula = $_POST['matricula'];
+        $obAluno->nome = $_POST['nome'];
         $obAluno->tipoDisciplina = $_POST['tipoDisciplina'];
         $obAluno->turma = $_POST['turma'];
         $obAluno->atualizar();

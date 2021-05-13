@@ -2,8 +2,7 @@
     require __DIR__.'/vendor/autoload.php';
     
     use \App\Entity\Aluno;
-    use \App\Entity\Turma;
-
+    
     $alunos = Aluno::getAlunos();
 
     $mensagem = '';
@@ -26,6 +25,7 @@
                             <td>'.$aluno->matricula.'</td>
                             <td>'.$aluno->nome.'</td>
                             <td>'.$aluno->tipoDisciplina.'</td>
+                            <td>'.$aluno->turma.'</td>
                             <td>
                                 <a href="editarAluno.php?id='.$aluno->id.'">
                                     <button type="button" class="btn btn-primary">Editar</button>

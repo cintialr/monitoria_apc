@@ -11,6 +11,7 @@
         $obAluno->matricula         = $_POST['matricula'];
         $obAluno->nome              = $_POST['nome'];
         $obAluno->tipoDisciplina    = $_POST['tipoDisciplina'];
+        $obAluno->turma             = $_POST['turma'];
         $obAluno->novoAluno();
 
         header('location: aluno.php?status=success');

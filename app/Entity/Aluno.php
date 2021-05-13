@@ -23,6 +23,12 @@ class Aluno{
      * @var string
      */
     public $tipoDisciplina;
+    
+    /**
+     * turma aluno
+     * @var string
+     */
+    public $turma;
 
    
     /**
@@ -35,6 +41,7 @@ class Aluno{
                                           'matricula'         => $this->matricula,
                                           'nome'              => $this->nome,
                                           'tipoDisciplina'    => $this->tipoDisciplina,
+                                          'turma'             => $this->turma
                                           ]);
         return true;
     }
@@ -68,9 +75,10 @@ class Aluno{
    */
   public function atualizar(){
     return (new Database('aluno'))->update('id = '.$this->id,[
-                                                                'nome'            => $this->nome,
                                                                 'matricula'       => $this->matricula,
+                                                                'nome'            => $this->nome,
                                                                 'tipoDisciplina'  => $this->tipoDisciplina,
+                                                                'turma'           => $this->turma
                                                               ]);
   }
 

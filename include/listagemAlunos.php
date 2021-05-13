@@ -12,6 +12,7 @@
                     <th scope="col">Matrícula</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Natureza</th>
+                    <th scope="col">Turma</th>
                     <th scope="col"></th>
                 </tr>
 
@@ -23,7 +24,10 @@
     </section>
         <div class="btn container">
             <a href="cadastroAluno.php">
-                <button class="btn btn-secondary">Novo Aluno</button>
+                <button class="btn btn-primary">Novo Aluno</button>
+            </a>
+            <a href="criarTurma.php">
+                <button class="btn btn-secondary">Voltar</button>
             </a>
         </div>   
 </main>
