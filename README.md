@@ -13,7 +13,7 @@
 
   MySql
 
-## Framework Fronted
+## Framework Frontend
   Bootstrap
   
 ## Script SQL
