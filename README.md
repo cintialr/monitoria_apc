@@ -1,5 +1,7 @@
 # monitoria_apc
 
+ Projeto de banco de dados, criação de um banco para a monitoria de apc.
+ 
 ## Autores
 
 - Alícia Rita Oliveira dos Reis - `17/0129306`
